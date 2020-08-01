@@ -43,7 +43,7 @@ public class MessageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!(name.getText().toString().equals("") || topic.getText().toString().equals("")
+                if(!(topic.getText().toString().equals("")
                         || note.getText().toString().equals("") || bibleRefrence.getText().toString().equals("")|| watchword.getText().toString().equals(""))){
                     getValues();
                     setContentView(R.layout.activity_main);
@@ -79,7 +79,7 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     public void btnView(View view) {
-        Intent intent = new Intent(this, ViewActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
