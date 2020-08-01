@@ -2,29 +2,26 @@ package com.example.sbfm;
 
 public class User {
 
-    private String Name;
+
     private String Topic;
     private String Note;
     private String BibleRefrences;
     private String WatchWord;
+    private String Name;
+    private String Post;
+    private String ProfileImage;
 
     public User() {
     }
 
-    public User(String name, String topic, String note, String bibleRefrences, String watchWord) {
-        Name = name;
+    public User(String topic, String note, String bibleRefrences, String watchWord, String name, String post, String profileImage) {
         Topic = topic;
         Note = note;
         BibleRefrences = bibleRefrences;
         WatchWord = watchWord;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
         Name = name;
+        Post = post;
+        ProfileImage = profileImage;
     }
 
     public String getTopic() {
@@ -57,5 +54,29 @@ public class User {
 
     public void setWatchWord(String watchWord) {
         WatchWord = watchWord;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getPost() {
+        return Post;
+    }
+
+    public void setPost(String post) {
+        Post = post;
+    }
+
+    public String getProfileImage() {
+        return ProfileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        ProfileImage = profileImage;
     }
 }

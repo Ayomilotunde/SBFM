@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     mDialog.dismiss();
                                     Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),MessageActivity.class));
+                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                                 }else {
                                     mDialog.dismiss();
