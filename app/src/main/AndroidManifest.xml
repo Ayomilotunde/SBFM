@@ -8,7 +8,10 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewActivity"></activity>
+        <activity android:name=".ProfileShowActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".StartActivity" />
+        <activity android:name=".ViewActivity" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".SignUpActivity">
             <intent-filter>
