@@ -2,4 +2,9 @@
     <string name="app_name">SBFM</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="loading">Loading</string>
+    <string name="welcome">Welcome</string>
+    <string name="save">Save</string>
+    <string name="post">Post</string>
+    <string name="name">Name</string>
 </resources>

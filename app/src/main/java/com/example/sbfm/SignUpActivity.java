@@ -74,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     mDialog.dismiss();
                     Toast.makeText(getApplicationContext(),"SignUp Successful",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                 }
 
             }
