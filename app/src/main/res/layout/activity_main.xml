@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity"
+    android:background="@color/colorPrimaryDark"
     tools:openDrawer="start">
 
        <com.google.android.material.navigation.NavigationView
@@ -31,8 +32,7 @@
         <FrameLayout
             android:id="@+id/main_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp">
+            android:layout_height="match_parent">
 
 
             <androidx.recyclerview.widget.RecyclerView
