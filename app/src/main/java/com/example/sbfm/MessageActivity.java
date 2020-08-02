@@ -81,6 +81,8 @@ public class MessageActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 saveAccountInformation();
+
+                //startActivity(new Intent(MessageActivity.this, MainActivity.class));
             }
         });
 
@@ -115,16 +117,20 @@ public class MessageActivity extends AppCompatActivity {
                         PostsMap.put("watchWord", Watchword);
                         PostsMap.put("topic", topic1);
 
-                        Ref.child(daj).updateChildren(PostsMap)
-                                .addOnSuccessListener(new OnSuccessListener() {
-                                    @Override
-                                    public void onSuccess(Object o) {
-                                        Toast.makeText(MessageActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                                        mProgress.dismiss();
-                                        sendToProduct();
+                        if (note1.isEmpty() || bibleRef.isEmpty() || topic1.isEmpty()){
+                            Toast.makeText(MessageActivity.this, "Field Required", Toast.LENGTH_SHORT).show();
+                        }else {
 
-                                    }
-                                });
+                            Ref.child(daj).updateChildren(PostsMap)
+                                    .addOnSuccessListener(new OnSuccessListener() {
+                                        @Override
+                                        public void onSuccess(Object o) {
+                                            Toast.makeText(MessageActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
+                                            mProgress.dismiss();
+                                            sendToProduct();
+                                        }
+                                    });
+                        }
 
 
 

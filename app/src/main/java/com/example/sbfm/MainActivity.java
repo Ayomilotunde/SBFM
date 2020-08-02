@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -81,7 +83,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
 
         Menu menu = mNavigationView.getMenu();
 //        menu.findItem(R.id.nav_logout).setVisible(false);
-        menu.findItem(R.id.nav_profile).setVisible(false);
+ //       menu.findItem(R.id.nav_profile).setVisible(false);
 
         mNavigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -184,6 +186,15 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)){
             mDrawerLayout.closeDrawer(GravityCompat.START);
+
+            new AlertDialog.Builder(this).setTitle("Exit App").setMessage("Are you sure you want to Exit?")
+                    .setNegativeButton("No", null).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    MainActivity.super.onBackPressed();
+                }
+            }).create().show();
+
         }else{
             super.onBackPressed();
         }
@@ -195,13 +206,11 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
 
         switch (item.getItemId()) {
             case R.id.nav_home:
-                Intent intent = new Intent(this, ProfileShowActivity.class);
-                startActivity(intent);
                 break;
             case R.id.nav_cycle:
                 Toast.makeText(this, "clicked Cycle", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_bus:
+            case R.id.nav_message:
                 //setContentView(R.layout.activity_second);
                 Intent intent1 = new Intent(this, MessageActivity.class);
                 startActivity(intent1);
@@ -214,10 +223,25 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
                 SendUserToLoginActivity();
                 break;
             case R.id.nav_profile:
-                Toast.makeText(this, "Clicked Profile", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, ProfileShowActivity.class);
+                startActivity(intent);
+                //Toast.makeText(this, "Clicked Profile", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nav_share:
+                /*Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "Download the new Student Smart Saver Mobile App and Share with your friends." +
+                        "   " + "\n" +
+                        "PlayStore - https://play.google.com/store/apps/details?id=com.ayomi.studentsmartsaver";
+                String shareSubject = "Your Subject Here";
+
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
+
+
+                startActivity(Intent.createChooser(sharingIntent, "Share Using"));*/
+                startActivity(new Intent(this, PastorsActivity.class));
                 Toast.makeText(this, "Clicked Share", Toast.LENGTH_SHORT).show();
                 break;
 

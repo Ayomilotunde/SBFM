@@ -5,15 +5,15 @@
 
         <item
             android:id="@+id/nav_home"
-            android:title="Profile" />
+            android:title="Home" />
 
         <item
             android:id="@+id/nav_cycle"
             android:title="Cycle" />
 
         <item
-            android:id="@+id/nav_bus"
-            android:title="Bus" />
+            android:id="@+id/nav_message"
+            android:title="Messages" />
 
         <item
             android:id="@+id/nav_car"
@@ -30,12 +30,12 @@
             <group android:checkableBehavior="single">
 
                 <item
-                    android:id="@+id/nav_login"
-                    android:title="Logout" />
-
-                <item
                     android:id="@+id/nav_profile"
                     android:title="Profile" />
+
+                <item
+                    android:id="@+id/nav_login"
+                    android:title="Logout" />
 
             </group>
         </menu>
