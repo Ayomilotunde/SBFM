@@ -46,7 +46,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
 
     private ProgressDialog mProgress;
     private FirebaseAuth mAuth;
-    private DatabaseReference UserRef;
+    private DatabaseReference UserRef, Ref;
     private String CurrentUSerID;
 
     FirebaseRecyclerOptions<User> options1;
@@ -57,6 +57,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        View navView = mNavigationView.inflateHeaderView(R.layout.header);
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mNavigationView = findViewById(R.id.nav_view);
         nav_image = findViewById(R.id.nav_post);
@@ -68,6 +69,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
         mAuth = FirebaseAuth.getInstance();
         CurrentUSerID = mAuth.getCurrentUser().getUid();
         UserRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        Ref = FirebaseDatabase.getInstance().getReference().child("Sermon");
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
@@ -89,49 +91,48 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
         mNavigationView.setNavigationItemSelectedListener(this);
         mNavigationView.setCheckedItem(R.id.nav_home);
 
-        UserRef.child(CurrentUSerID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot)
-            {
-                if (snapshot.exists())
-                {
-
-                    String Name = snapshot.child("Name").getValue().toString();
-                    String Post1 = snapshot.child("Post").getValue().toString();
-                    String image1 = snapshot.child("ProfileImage").getValue().toString();
-
-                    Picasso.get().load(image1).placeholder(R.drawable.profile).into(nav_image);
-
-                    profile_name.setText(Name);
-                    post.setText(Post1);
-
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        UserRef.child(CurrentUSerID).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot)
+//            {
+//                if (snapshot.exists())
+//                {
+//
+//                    String Name = snapshot.child("Name").getValue().toString();
+//                    String Post1 = snapshot.child("Post").getValue().toString();
+//                    String image1 = snapshot.child("ProfileImage").getValue().toString();
+//
+//                    Picasso.get().load(image1).placeholder(R.drawable.profile).into(nav_image);
+//
+//                    profile_name.setText(Name);
+//                    post.setText(Post1);
+//
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
         loadDataText();
     }
 
     private void loadDataText() {
 
-        Query sortPostInDescendingOrder = UserRef.orderByChild("Counter");
+        Query sortPostInDescendingOrder = Ref.orderByChild("Counter");
         options1 = new FirebaseRecyclerOptions.Builder<User>().setQuery(sortPostInDescendingOrder, User.class).build();
         adapter1 = new FirebaseRecyclerAdapter<User, TextViewHolder>(options1) {
             @Override
             protected void onBindViewHolder(@NonNull TextViewHolder holder, int position, @NonNull User model) {
                 final String postKey = getRef(position).getKey();
                 holder.description.setText(model.getNote());;
-//                holder.postDate.setText(model.getDate());
                 holder.topic.setText(model.getTopic());
 
-                holder.bibleRef.setText(model.getBibleRefrences());
+                holder.bibleRef.setText(model.getBibleRef());
                 holder.Name.setText(model.getName());
                 holder.post.setText(model.getPost());
 
