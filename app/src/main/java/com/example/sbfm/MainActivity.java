@@ -80,7 +80,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
 
 
         Menu menu = mNavigationView.getMenu();
-        menu.findItem(R.id.nav_logout).setVisible(false);
+//        menu.findItem(R.id.nav_logout).setVisible(false);
         menu.findItem(R.id.nav_profile).setVisible(false);
 
         mNavigationView.bringToFront();
@@ -135,6 +135,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
                 holder.bibleRef.setText(model.getBibleRef());
                 holder.Name.setText(model.getName());
                 holder.post.setText(model.getPost());
+                holder.textView9.setText(model.getWatchWord());
 
 
 
@@ -209,10 +210,8 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
                 Toast.makeText(this, "Clicked Car", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_login:
-                Toast.makeText(this, "Clicked Login", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_logout:
-                Toast.makeText(this, "Clicked Logout", Toast.LENGTH_SHORT).show();
+                mAuth.signOut();
+                SendUserToLoginActivity();
                 break;
             case R.id.nav_profile:
                 Toast.makeText(this, "Clicked Profile", Toast.LENGTH_SHORT).show();
@@ -230,5 +229,12 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void SendUserToLoginActivity() {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

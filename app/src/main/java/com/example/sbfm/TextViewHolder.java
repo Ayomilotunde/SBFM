@@ -21,7 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class TextViewHolder extends RecyclerView.ViewHolder {
 
     public LinearLayout root;
-    public TextView topic, description, Note, bibleRef, Name, post;
+    public TextView topic, description, Note, bibleRef, Name, post, textView9;
     public CircleImageView img;
     private FirebaseAuth mAuth;
     String currentUserID, post_key;
@@ -39,6 +39,7 @@ public class TextViewHolder extends RecyclerView.ViewHolder {
         Name = itemView.findViewById(R.id.Name);
         post = itemView.findViewById(R.id.post);
         img = itemView.findViewById(R.id.img);
+        textView9 = itemView.findViewById(R.id.textView9);
         mAuth = FirebaseAuth.getInstance();
     }
 
