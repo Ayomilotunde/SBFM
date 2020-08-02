@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/app_tool"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	app:titleTextColor="#4DF163"
+	android:background="@android:color/transparent"
+	android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+
+</com.google.android.material.appbar.MaterialToolbar>

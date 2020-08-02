@@ -44,7 +44,7 @@ public class ProfileShowActivity extends AppCompatActivity {
         mProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         CurrentUSerID = mAuth.getCurrentUser().getUid();
-        UserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(CurrentUSerID);
+        UserRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         UserRef.child(CurrentUSerID).addValueEventListener(new ValueEventListener() {
             @Override
@@ -55,7 +55,7 @@ public class ProfileShowActivity extends AppCompatActivity {
 
                         String Name = snapshot.child("Name").getValue().toString();
                         String Post1 = snapshot.child("Post").getValue().toString();
-                        String image1 = snapshot.child("image").getValue().toString();
+                        String image1 = snapshot.child("ProfileImage").getValue().toString();
 
 
 

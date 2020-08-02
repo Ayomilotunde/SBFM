@@ -42,8 +42,23 @@ public class LoginActivity extends AppCompatActivity {
 
             }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            sendUserToMainActivity();
+        }else
+        {
+        }
 
-            public void loginAccount(){
+    }
+
+    private void sendUserToMainActivity() {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void loginAccount(){
 
                 String mEmail=loginemail.getText().toString().trim();
                 String mPassword= loginpassword.getText().toString().trim();
@@ -71,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     mDialog.dismiss();
                                     Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),MessageActivity.class));
+                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                                 }else {
                                     mDialog.dismiss();
