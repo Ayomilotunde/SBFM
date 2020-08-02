@@ -187,15 +187,10 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)){
             mDrawerLayout.closeDrawer(GravityCompat.START);
 
-            new AlertDialog.Builder(this).setTitle("Exit App").setMessage("Are you sure you want to Exit?")
-                    .setNegativeButton("No", null).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    MainActivity.super.onBackPressed();
-                }
-            }).create().show();
+
 
         }else{
+
             super.onBackPressed();
         }
 
@@ -208,7 +203,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
             case R.id.nav_home:
                 break;
             case R.id.nav_cycle:
-                Toast.makeText(this, "clicked Cycle", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "clicked Branches", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_message:
                 //setContentView(R.layout.activity_second);
@@ -216,7 +211,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
                 startActivity(intent1);
                 break;
             case R.id.nav_car:
-                Toast.makeText(this, "Clicked Car", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Clicked History", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_login:
                 mAuth.signOut();

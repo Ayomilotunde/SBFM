@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/background">
 
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-smallcaps"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="#EFE16A"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +73,7 @@
         android:textAlignment="textStart"
         android:textColor="#FFF500"
         android:textSize="20sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +126,7 @@
         android:fontFamily="serif-monospace"
         android:text="Name"
         android:textAlignment="textStart"
-        android:textColor="#FFF500"
+        android:textColor="@android:color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img"
@@ -148,7 +149,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFEB3B"
         android:textSize="18sp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,8 +158,9 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="1dp"
         android:textColor="#FFFFFF"
+        android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post" />
 

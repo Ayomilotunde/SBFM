@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
-	android:layout_height="260dp"
-	android:background="#FCDFDDD1"
-	android:padding="20dp"
+	android:layout_height="250dp"
+	android:background="@drawable/background"
+	android:padding="30dp"
 	android:orientation="vertical">
 
 	<de.hdodenhof.circleimageview.CircleImageView
 		android:id="@+id/nav_post"
-		android:layout_width="130dp"
-		android:src="@drawable/profile"
-		android:layout_height="150dp" />
+		android:layout_width="110dp"
+		android:layout_margin="10dp"
+		android:layout_gravity="center"
+		android:src="@drawable/icon"
+		android:layout_height="110dp" />
 
 	<TextView
 		android:id="@+id/profile_image"
 		android:layout_width="wrap_content"
+		android:layout_gravity="center"
+		android:gravity="center"
+		android:textStyle="bold"
+		android:padding="10dp"
+		android:layout_margin="10dp"
+		android:fontFamily="cursive"
 		android:layout_height="wrap_content"
-		android:text="wwwwww"
-		android:textColor="#000000"
-		android:textSize="30sp" />
+		android:text="SHALOM BIBLE FAITH MISSION"
+		android:textColor="#fff"
+		android:textSize="20sp" />
 
-	<TextView
-		android:id="@+id/main_post"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="ttttttt"
-		android:fontFamily="monospace"
-		android:textSize="20sp"
-		android:textColor="#000000" />
 
 </LinearLayout>

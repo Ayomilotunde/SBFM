@@ -9,7 +9,7 @@
 
         <item
             android:id="@+id/nav_cycle"
-            android:title="Cycle" />
+            android:title="Branches" />
 
         <item
             android:id="@+id/nav_message"
@@ -17,7 +17,7 @@
 
         <item
             android:id="@+id/nav_car"
-            android:title="Car" />
+            android:title="Church History" />
 
     </group>
 

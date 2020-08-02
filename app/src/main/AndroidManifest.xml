@@ -3,12 +3,13 @@
     package="com.example.sbfm">
 
     <application
-        android:name=".SimpleOffline"
+
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".SimpleOffline">
         <activity android:name=".PastorsActivity"></activity>
         <activity android:name=".ViewActivity" />
         <activity android:name=".ProfileShowActivity" />

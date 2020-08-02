@@ -227,6 +227,7 @@ public class MessageActivity extends AppCompatActivity {
     private void sendToProduct() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 //    private void getValues(){
