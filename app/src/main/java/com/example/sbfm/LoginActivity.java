@@ -104,6 +104,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void Members(View view) {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, StartActivity.class));
     }
 }
